@@ -19,9 +19,6 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-
-- task: CopyFiles@2
-  inputs:
     
 # 对apk签名  https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/android-signing?view=azure-devops
 - task: AndroidSigning@3 
