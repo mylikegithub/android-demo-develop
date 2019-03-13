@@ -53,10 +53,10 @@ steps:
     pathtoPublish: $(Build.ArtifactStagingDirectory)
     artifactName: MyBuildOutputs
 
- #上传蒲公英脚步任务
+ #上传蒲公英脚本任务
 - task: ShellScript@2
   inputs:
-    scriptPath: uploadPgyer.sh 
+    scriptPath: uploadPgyer 
     args: '$(uploadpath) $(uKey) $(apikey)' # Optional
     #disableAutoCwd: false # Optional
     #cwd: '' # Optional
