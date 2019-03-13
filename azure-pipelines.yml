@@ -56,7 +56,7 @@ steps:
  #上传蒲公英脚本任务
 - task: ShellScript@2
   inputs:
-    scriptPath: uploadPgyer 
+    scriptPath: uploadPgyer.sh
     args: '$(uploadpath) $(uKey) $(apikey)' # Optional
     #disableAutoCwd: false # Optional
     #cwd: '' # Optional
