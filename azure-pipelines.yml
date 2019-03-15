@@ -83,7 +83,7 @@ jobs:
     vmImage: 'macOS-10.13'
   #如果成功,运行主分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/master'))
-  variables:   #默认及自定义的变量
+variables:   #默认及自定义的变量
     scheme: 'AndroidSignDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'
@@ -93,7 +93,7 @@ jobs:
     #uploadpath: '/Users/vsts/agent/2.147.1/work/1/a/output/iphoneos/Debug/iOSTestDemo.ipa'
     uKey: '04c6390dd62a9cbd3d9e5011f4d23f66'
     apikey: 'aa9a0540df1ca877bf86b2188a286137'
-  steps:
+steps:
   #gradle编译  https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/android?view=azure-devops
   - task: Gradle@2
     inputs:
@@ -127,8 +127,7 @@ jobs:
     inputs:
       pathtoPublish: $(Build.ArtifactStagingDirectory)
       artifactName: MyBuildOutputs
-
- #上传蒲公英脚本任务
+#上传蒲公英脚本任务
   - task: ShellScript@2
     inputs:
       scriptPath: uploadPgyer.sh
@@ -136,3 +135,4 @@ jobs:
       #disableAutoCwd: false # Optional
       #cwd: '' # Optional
       #failOnStandardError: false
+
