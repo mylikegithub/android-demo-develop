@@ -16,7 +16,8 @@ jobs:
 #debug只有在develop分支的情况下运行
 - job: Debug 
   #【非master】分支就会运行
-  pool:   #代理池
+  #代理池
+  pool:   
   vmImage: 'macOS-10.13'
   #如果成功,运行develop分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
