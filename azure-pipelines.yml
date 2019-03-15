@@ -70,7 +70,7 @@ jobs:
   - task: ShellScript@2
     inputs:
       scriptPath: uploadPgyer.sh
-      args: '$(uploadpath) $(uKey) $(apikey)' # Optional
+      args: '$(uploadpath) $(uKey) $(apikey) $(pgyapktitle)' # Optional
       #disableAutoCwd: false # Optional
       #cwd: '' # Optional
       #failOnStandardError: false
@@ -132,7 +132,7 @@ jobs:
   - task: ShellScript@2
     inputs:
       scriptPath: uploadPgyer.sh
-      args: '$(uploadpath) $(uKey) $(apikey)' # Optional
+      args: '$(uploadpath) $(uKey) $(apikey) $(pgyapktitle)' # Optional
       #disableAutoCwd: false # Optional
       #cwd: '' # Optional
       #failOnStandardError: false
