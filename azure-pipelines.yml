@@ -8,8 +8,7 @@ trigger:
   branches: #通过分支改变触发
     include:
     - master
-    - develop
-    - /*
+    - develop/*
     exclude:
     - releases/old*
 
