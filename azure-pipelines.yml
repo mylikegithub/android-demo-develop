@@ -82,9 +82,9 @@ jobs:
   pool:
     vmImage: 'macOS-10.13'
   #如果成功,运行主分支
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/master'))
   variables:   #默认及自定义的变量
-    scheme: 'AndroidTestDemo'
+    scheme: 'AndroidSignDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'
     P12Password: '111111'
