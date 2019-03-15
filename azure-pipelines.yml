@@ -20,8 +20,8 @@ jobs:
   pool:   
     vmImage: 'macOS-10.13'
     #如果成功,运行develop分支
-    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
-    variables:   #默认及自定义的变量
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
+  variables:   #默认及自定义的变量
       scheme: 'AndroidTestDemo'
       sdk: 'iphoneos'
       configuration: 'Debug'
@@ -81,9 +81,9 @@ jobs:
 #代理池
   pool:
     vmImage: 'macOS-10.13'
-  #如果成功,运行主分支
+
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/master'))
-variables:   #默认及自定义的变量
+  variables:   #默认及自定义的变量
     scheme: 'AndroidSignDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'
@@ -93,7 +93,7 @@ variables:   #默认及自定义的变量
     #uploadpath: '/Users/vsts/agent/2.147.1/work/1/a/output/iphoneos/Debug/iOSTestDemo.ipa'
     uKey: '04c6390dd62a9cbd3d9e5011f4d23f66'
     apikey: 'aa9a0540df1ca877bf86b2188a286137'
-steps:
+  steps:
   #gradle编译  https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/android?view=azure-devops
   - task: Gradle@2
     inputs:
