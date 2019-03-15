@@ -11,7 +11,13 @@ trigger:
     - develop/*
     exclude:
     - releases/old*
-
+pr:
+  branches:
+    include:
+    - master
+    - develop/*
+    exclude:
+    - releases/old*
 jobs:
 #debug只有在develop分支的情况下运行
 - job: Debug 
