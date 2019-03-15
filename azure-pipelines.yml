@@ -20,7 +20,7 @@ jobs:
   pool:   
     vmImage: 'macOS-10.13'
   #如果成功,运行develop分支
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/develop'))
   variables:   #默认及自定义的变量
     scheme: 'AndroidTestDemo'
     sdk: 'iphoneos'
@@ -81,8 +81,7 @@ jobs:
 #代理池
   pool:
     vmImage: 'macOS-10.13'
-
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/master'))
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   variables:   #默认及自定义的变量
     scheme: 'AndroidSignDemo'
     sdk: 'iphoneos'
