@@ -68,12 +68,12 @@ jobs:
 
  #上传蒲公英脚本任务
   - task: ShellScript@2
-  inputs:
-    scriptPath: uploadPgyer.sh
-    args: '$(uploadpath) $(uKey) $(apikey)' # Optional
-    #disableAutoCwd: false # Optional
-    #cwd: '' # Optional
-    #failOnStandardError: false
+    inputs:
+      scriptPath: uploadPgyer.sh
+      args: '$(uploadpath) $(uKey) $(apikey)' # Optional
+      #disableAutoCwd: false # Optional
+      #cwd: '' # Optional
+      #failOnStandardError: false
 
 #正式环境的安装包
 - job: Release
