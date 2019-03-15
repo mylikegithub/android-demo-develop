@@ -9,7 +9,6 @@ trigger:
     include:
     - master
     - develop
-    - develop/*
     exclude:
     - releases/old*
 
@@ -21,7 +20,7 @@ jobs:
   pool:   
     vmImage: 'macOS-10.13'
   #如果成功,运行develop分支
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/develop'))
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/develop'))
   variables:   #默认及自定义的变量
     scheme: 'AndroidTestDemo'
     sdk: 'iphoneos'
