@@ -78,7 +78,8 @@ jobs:
 #正式环境的安装包
 - job: Release
 #master分支就会运行
-  pool:   #代理池
+#代理池
+  pool:   
   vmImage: 'macOS-10.13'
   #如果成功,运行主分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
