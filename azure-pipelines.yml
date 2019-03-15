@@ -13,12 +13,12 @@ trigger:
     - releases/old*
 
 jobs:
-
-#测试环境的安装包
-- job:Debug  
-pool:   #代理池
+#debug只有在develop分支的情况下运行
+- job: Debug 
+  #【非master】分支就会运行
+  pool:   #代理池
   vmImage: 'macOS-10.13'
-  #如果成功,运行主分支
+  #如果成功,运行develop分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
   variables:   #默认及自定义的变量
     scheme: 'AndroidTestDemo'
@@ -79,9 +79,9 @@ steps:
     #failOnStandardError: false
 
 #正式环境的安装包
-- job:Release
+- job: Release
 #master分支就会运行
-pool:   #代理池
+  pool:   #代理池
   vmImage: 'macOS-10.13'
   #如果成功,运行主分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
