@@ -80,7 +80,7 @@ jobs:
 #master分支就会运行
 #代理池
   pool:
-  vmImage: 'macOS-10.13'
+    vmImage: 'macOS-10.13'
   #如果成功,运行主分支
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/features/develop'))
   variables:   #默认及自定义的变量
