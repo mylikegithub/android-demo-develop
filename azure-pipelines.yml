@@ -11,7 +11,13 @@ trigger:
     - develop/*
     exclude:
     - releases/old*
-
+pr:
+  branches:
+    include:
+    - master
+    - develop/*
+    exclude:
+    - releases/old*
 jobs:
 #debug只有在develop分支的情况下运行
 - job: Debug 
@@ -25,7 +31,7 @@ jobs:
     scheme: 'AndroidTestDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'
-    P12Password: '123456'
+    P12Password: '111111'
     pgyapktitle: '掌上天软debug'
     uploadpath: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/app-debug.apk'
     #uploadpath: '/Users/vsts/agent/2.147.1/work/1/a/output/iphoneos/Debug/iOSTestDemo.ipa'
